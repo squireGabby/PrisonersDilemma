@@ -22,13 +22,21 @@ def move(my_history, their_history, my_score, their_score):
     their_history = ()
     Bscore = 0
     Cscore = 0
-    for their_history in range (their_history[-1]):
-        If 'c' in their_history():
-            Cscore =+ 1
-    for their_history in range (their_history[-1]):
-            Bscore =+ 1
-    if Bscore == Cscore:
-        return random.choice('c','b')
+    percent = abs(Bscore/Cscore)*10
+    
+    if len (their_history) < 0:
+        for c in range(len(their_history)):
+            if 'c' in their_history[c]:
+                Cscore += 1
+        for b in range(len(their_history)):
+            if 'b' in their_history[b]:
+                Bscore += 1
+        if Bscore == Cscore:
+            return random.choice('cb')
+        else:
+            if random.randrange(100) < percent:
+    else:
+        return random.choice('cb')
     
             
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
