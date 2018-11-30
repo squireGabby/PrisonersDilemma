@@ -28,6 +28,9 @@ def move(my_history, their_history, my_score, their_score):
     if len (their_history) == 0:
             return random.choice('cb')
     else:
+        if len(their_history) > 5 and 'b' != their_history[(x-1)] and 'c' == their_history[(x-2)] and 'c' == their_history[(x-3)]:
+            Bscore += 5
+            
         if Bscore == Cscore:
             return ('cb')
             
