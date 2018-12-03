@@ -42,7 +42,8 @@ def move(my_history, their_history, my_score, their_score):
         for b in range(len(their_history)):
             if 'b' in their_history[b]:
                 Bscore += 1
-                
+            if len(their_history) > 5 and 'b' != their_history[(b-1)] and 'b' == their_history[(b-2)] and 'b' == their_history[(b-3)]:
+                Bscore += 5
         roll = random.randrange(100)
         if roll <= percent:
             return 'c'
