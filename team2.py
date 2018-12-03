@@ -29,10 +29,9 @@ def move(my_history, their_history, my_score, their_score):
     if len (their_history) == 0:
             return random.choice('cb')
     else:
-        
-            
+             
         if Bscore == Cscore:
-            return ('cb')
+            return random.choice('cb')
             
         for c in range(len(their_history)):
             if 'c' in their_history[c]:
